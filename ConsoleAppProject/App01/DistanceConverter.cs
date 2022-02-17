@@ -107,6 +107,10 @@ namespace ConsoleAppProject.App01
             {
                 middleLength = inputLength * 0.000000001;
             }
+            else
+            {
+                outputLength = 0;
+            }
         }
 
         /// <summary>
@@ -161,7 +165,7 @@ namespace ConsoleAppProject.App01
         {
             if (outputLength == 0 && inputLength != 0)
             {
-                Console.WriteLine(" Pls check your spelling (remember that you have to write in full and use plurals e.g. meters not meter even if your length is 1)");
+                Console.WriteLine(" Pls check your spelling (remember that you have to write in full and use plurals e.g. meters not meter)");
             }
         }
 
