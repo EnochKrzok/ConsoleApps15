@@ -20,7 +20,6 @@ namespace ConsoleAppProject.App01
 
         private string outputUnit;
 
-        private string retry;
         /// <summary>
         /// This method will run the distance converter
         /// </summary>
@@ -32,7 +31,6 @@ namespace ConsoleAppProject.App01
             ConvertToMeters();
             ConvertFromMeters();
             OutputLength();
-            Check();
             Again();
         }
 
@@ -45,7 +43,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("          App01 Distance Converter         ");
             Console.WriteLine("            By Enoch Jozue Krzok           ");
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine(" You can convert from and to the following ");
+            Console.WriteLine(" You can convert from and to the following:");
             Console.WriteLine("      Meters, Kilometers, Feet, Miles      ");
             Console.WriteLine("            Inches and Nanometers          ");
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
@@ -69,7 +67,20 @@ namespace ConsoleAppProject.App01
         {
             Console.Write(" Pls enter " + inputUnit + " you want to convert to " + outputUnit + " > ");
             string value = Console.ReadLine();
-            inputLength = Convert.ToDouble(value);
+            if (Double.TryParse(value, out inputLength))
+            {
+                inputLength = Convert.ToDouble(value);
+                if (inputLength < 0)
+                {
+                    Console.WriteLine(" Pls enter a correct value ");
+                    InputLength();
+                }
+            }
+            else
+            {
+                Console.WriteLine(" Pls enter a correct value ");
+                InputLength();
+            }
         }
 
         /// <summary>
@@ -155,17 +166,15 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputLength()
         {
-            Console.WriteLine(" " + inputLength + " " + inputUnit + " is " + outputLength + " " + outputUnit);
-        }
-
-        /// <summary>
-        /// checks for spelling errors
-        /// </summary>
-        private void Check()
-        {
             if (outputLength == 0 && inputLength != 0)
             {
                 Console.WriteLine(" Pls check your spelling (remember that you have to write in full and use plurals e.g. meters not meter)");
+                InputUnits();
+                OutputLength();
+            }
+            else
+            {    
+                Console.WriteLine(" " + inputLength + " " + inputUnit + " is " + outputLength + " " + outputUnit);
             }
         }
 
@@ -175,7 +184,7 @@ namespace ConsoleAppProject.App01
         private void Again()
         {
             Console.Write(" Would you like to go again y/n > ");
-            retry = Console.ReadLine();
+            string retry = Console.ReadLine();
             if (retry.Equals("y", StringComparison.CurrentCultureIgnoreCase))
             {
                 Run();
@@ -189,6 +198,5 @@ namespace ConsoleAppProject.App01
                 Console.Write(" Read the instructions next time! ");
             }
         }
-
     }
 }
