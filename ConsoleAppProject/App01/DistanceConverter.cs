@@ -10,15 +10,15 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        private double inputLength;
+        public double inputLength;
 
-        private double outputLength;
+        public double outputLength;
 
-        private double middleLength;
+        public double middleLength;
 
-        private string inputUnit;
+        public string inputUnit;
 
-        private string outputUnit;
+        public string outputUnit;
 
         /// <summary>
         /// This method will run the distance converter
@@ -86,7 +86,7 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// Converts every available unit to meters
         /// </summary>
-        private void ConvertToMeters()
+        public void ConvertToMeters()
         {
             ///meters to meters
             if (inputUnit.Equals("meters", StringComparison.CurrentCultureIgnoreCase))
@@ -120,14 +120,14 @@ namespace ConsoleAppProject.App01
             }
             else
             {
-                outputLength = 0;
+                middleLength = 0;
             }
         }
 
         /// <summary>
         /// Converts any available units from meters
         /// </summary>
-        private void ConvertFromMeters()
+        public void ConvertFromMeters()
         {
             ///meters to feet
             if (outputUnit.Equals("feet", StringComparison.CurrentCultureIgnoreCase))
@@ -158,6 +158,10 @@ namespace ConsoleAppProject.App01
             else if (outputUnit.Equals("nanometers", StringComparison.CurrentCultureIgnoreCase))
             {
                 outputLength = middleLength * 1000000000;
+            }
+            else
+            { 
+                outputLength = 0;
             }
         }
 
