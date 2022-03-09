@@ -3,10 +3,10 @@ namespace ConsoleAppProject.App02
     
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// Calculates BMI using metric or imperial 
     /// </summary>
     /// <author>
-    /// Student Name version 0.1
+    /// Enoch Jozue Krzok version 1.0
     /// </author>
     public class BMI
     {
@@ -18,6 +18,9 @@ namespace ConsoleAppProject.App02
 
         public double weight;
 
+        /// <summary>
+        /// This method will run the BMI calculator
+        /// </summary>
         public void Run()
         {
             OutputHeading();
@@ -35,6 +38,9 @@ namespace ConsoleAppProject.App02
             Again();
         }
 
+        /// <summary>
+        /// outputs a heading
+        /// </summary>
         private void OutputHeading()
         {
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
@@ -45,7 +51,10 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("              Pls use Numbers              ");
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++");
         }
-        
+
+        /// <summary>
+        /// User choses between imperial and metric
+        /// </summary>
         private void ChoiceUnit()
         {
             Console.Write(" Would you like to use imperial(1) (pounds and inches) or metric(2) (kilograms and meters) >");
@@ -66,6 +75,9 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// User inputs weight and height
+        /// </summary>
         private void Questions()
         {
             string peak = "";
@@ -99,16 +111,25 @@ namespace ConsoleAppProject.App02
             weight = Convert.ToDouble(load);
         }
 
+        /// <summary>
+        /// caculates BMI using metric
+        /// </summary>
         public void MetricBMI()
         {
             bmi = weight / (height * height);
         }
 
+        /// <summary>
+        /// caculates BMI using imperial
+        /// </summary>
         public void ImperialBMI()
         {
             bmi = weight * 703 / (height * height);
         }
 
+        /// <summary>
+        /// caculates BMI word using numbers and 
+        /// </summary>
         private void CalculateBMI()
         {
             Console.WriteLine(" Your BMI is " + bmi);
@@ -137,7 +158,7 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine(" You are obese class 3");
             }
             
-            Console.WriteLine(" Not to be racist but BAME have Higher risk (it seems BMI is based on white people sorry)");
+            Console.WriteLine(" Not to be racist but BAME have higher risk (it seems BMI is based on white people sorry)");
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// This app does distance conversions between six diffrent units (to and from) being meters, kilometers, nanometers, miles, feet and inches
     /// </summary>
     /// <author>
-    /// Enoch Jozue Krzok version 0.1
+    /// Enoch Jozue Krzok version 1.0
     /// </author>
     public class DistanceConverter
     {
