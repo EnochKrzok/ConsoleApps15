@@ -6,9 +6,11 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
-    /// At the moment this class just tests the
-    /// Grades enumeration names and descriptions
+    /// This class lets you input and output marks, output grades and grade profiles and quit
     /// </summary>
+    /// <author>
+    /// Enoch Jozue Krzok version 1.0
+    /// </author>
     public class StudentGrades
     {
         public const int NumberOfStudents = 10;
@@ -35,7 +37,7 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// This method will run the student grades program
+        /// run the student grades program
         /// </summary>
         public void Run()
         {
@@ -57,7 +59,7 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// This method will let you chose
+        /// lets you chose which thing you want to do
         /// </summary>
         private void Menu()
         {
@@ -111,6 +113,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// inputs a int (0-100) and converts said int to enum grade
+        /// </summary>
         private void InputMarks()
         {
             for (int i = 0; i < NumberOfStudents; i++)
@@ -121,7 +126,7 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// This method will run the BMI calculator
+        /// converts marks to grades
         /// </summary>
         public Grades ConvertMarktoGrade(int mark)
         {
@@ -147,6 +152,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// Output Marks
+        /// </summary>
         private void OutputMarks()
         {
             for (int i = 0; i < NumberOfStudents; i++)
@@ -155,6 +163,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// Caculates mean of marks
+        /// </summary>
         public void CalculateMean()
         {
             foreach (int mark in Marks)
@@ -164,7 +175,10 @@ namespace ConsoleAppProject.App03
 
             Mean = Total / NumberOfStudents;
         }
-        
+
+        /// <summary>
+        /// Caculates min and max of marks
+        /// </summary>
         public void CalculateMinMax()
         {
             Min = Marks[0];
@@ -182,6 +196,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// outputs the statistics (mean, max, min)
+        /// </summary>
         private void OutputStats()
         {
             Console.WriteLine($" The mean mark is {Mean}");
@@ -189,6 +206,9 @@ namespace ConsoleAppProject.App03
             Console.WriteLine($" The maximum mark is {Max}");
         }
 
+        /// <summary>
+        /// calculates the precentage of students how got each grade 
+        /// </summary>
         public void CalculateGradeProfile()
         {
             foreach (Grades grade in Grades)
@@ -202,6 +222,9 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// outputs the grade profile
+        /// </summary>
         private void OutputGradeProfile()
         {
             foreach (Grades val in Enum.GetValues(typeof(Grades)))
