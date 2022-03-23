@@ -111,8 +111,6 @@ namespace UnitTest
         {
             StudentGrades grades = new();
 
-            grades.Marks = new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
-
             grades.CalculateMean();
 
             Assert.AreEqual(55, grades.Mean);
@@ -122,8 +120,6 @@ namespace UnitTest
         public void TestMin()
         {
             StudentGrades grades = new();
-
-            grades.Marks = new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
 
             grades.CalculateMinMax();
 
@@ -135,8 +131,6 @@ namespace UnitTest
         {
             StudentGrades grades = new();
 
-            grades.Marks = new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
-
             grades.CalculateMinMax();
 
             Assert.AreEqual(100, grades.Max);
@@ -146,8 +140,6 @@ namespace UnitTest
         public void TestGradeProfile()
         {
             StudentGrades grades = new();
-            
-            grades.Marks = new int[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
 
             grades.CalculateGradeProfile();
 
