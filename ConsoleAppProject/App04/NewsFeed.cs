@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace ConsoleAppProject.App04
@@ -15,42 +16,35 @@ namespace ConsoleAppProject.App04
     /// search or ordering functions.
     ///</summary>
     ///<author>
-    ///  Michael Kölling and David J. Barnes
-    ///  version 0.1
+    /// Enoch Jozue Krzok 1.0
     ///</author> 
     public class NewsFeed
     {
-        private readonly List<MessagePost> messages;
-        private readonly List<PhotoPost> photos;
+        public List<Post> Posts { get; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            messages = new List<MessagePost>();
-            photos = new List<PhotoPost>();
+            Posts = new List<Post>();
+
+            MessagePost post = new MessagePost( "BobIsCooking" , "Im good cook");
+            AddPost(post);
+
+            PhotoPost photopost = new PhotoPost("GregOnFire", "Photo.png", "Dont let this guy cook!!");
+            AddPost(photopost);
         }
 
 
         ///<summary>
-        /// Add a text post to the news feed.
+        /// Add a post to the news feed.
         /// 
-        /// @param text  The text post to be added.
+        /// @param post  The post to be added.
         ///</summary>
-        public void AddMessagePost(MessagePost message)
+        public void AddPost(Post post)
         {
-            messages.Add(message);
-        }
-
-        ///<summary>
-        /// Add a photo post to the news feed.
-        /// 
-        /// @param photo  The photo post to be added.
-        ///</summary>
-        public void AddPhotoPost(PhotoPost photo)
-        {
-            photos.Add(photo);
+            Posts.Add(post);
         }
 
         ///<summary>
@@ -59,20 +53,12 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public void Display()
         {
-            // display all text posts
-            foreach (MessagePost message in messages)
+            // display all posts
+            foreach (Post post in Posts)
             {
-                message.Display();
-                Console.WriteLine();   // empty line between posts
-            }
-
-            // display all photos
-            foreach (PhotoPost photo in photos)
-            {
-                photo.Display();
+                post.Display();
                 Console.WriteLine();   // empty line between posts
             }
         }
     }
-
 }

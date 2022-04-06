@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -45,11 +46,13 @@ namespace ConsoleAppProject
             DistanceConverter converter = new DistanceConverter();
             BMI bmi = new BMI();
             StudentGrades student = new StudentGrades();
+            SocialNetwork social = new SocialNetwork();
 
             Console.WriteLine(" What app would you like to use");
             Console.WriteLine("     distance converter (1)    ");
             Console.WriteLine("       BMI calculator (2)      ");
             Console.WriteLine("       Student Grades (3)      ");
+            Console.WriteLine("       Social Network (4)      ");
             Console.Write(" Pls use the numbers in the brackets >");
             string choice = Console.ReadLine();
 
@@ -67,6 +70,10 @@ namespace ConsoleAppProject
                 else if (option == 3)
                 {
                     student.Run();
+                }
+                else if (option == 4)
+                {
+                    social.Run();
                 }
                 else
                 {

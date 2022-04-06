@@ -11,7 +11,7 @@ namespace ConsoleAppProject.Helpers
     /// There are methods for outputting a main heading
     /// and a title.
     /// <author>
-    /// Derek Peacock 2021
+    /// Enoch Jozue Krzok 2022
     /// </author>
     /// </summary>
     public static class ConsoleHelper
@@ -30,7 +30,7 @@ namespace ConsoleAppProject.Helpers
 
             // Get the user's choice
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ", 
+            int choiceNo = (int)InputNumber("\n Pls enter your choice > ", 
                                             1, choices.Length);
             return choiceNo;
         }
@@ -121,15 +121,11 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputHeading(string heading)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-
             Console.WriteLine("\n ---------------------------------");
             Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
+            Console.WriteLine("     by Enoch           ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
         }
 
         /// <summary>
@@ -138,8 +134,6 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputTitle(string title)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-
             Console.WriteLine($"\n {title}");
             Console.Write(" ");
 
@@ -149,7 +143,6 @@ namespace ConsoleAppProject.Helpers
             }
 
             Console.WriteLine("\n");
-            Console.ResetColor();
         }
     }
 }
